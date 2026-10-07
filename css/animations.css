@@ -1,0 +1,166 @@
+/* ---------- Keyframes ---------- */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, -6%, 0) scale(1.12);
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blobShift {
+  0%,
+  100% {
+    filter: blur(90px) hue-rotate(0deg);
+  }
+  50% {
+    filter: blur(110px) hue-rotate(40deg);
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children of grids/lists */
+.grid .reveal:nth-child(2),
+.stats .reveal:nth-child(2),
+.services .reveal:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.grid .reveal:nth-child(3),
+.stats .reveal:nth-child(3),
+.services .reveal:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.grid .reveal:nth-child(4),
+.stats .reveal:nth-child(4) {
+  transition-delay: 0.36s;
+}
+
+/* ---------- Split text ---------- */
+[data-split] .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+[data-split] .char {
+  display: inline-block;
+  transform: translateY(110%) rotate(6deg);
+  transition: transform 0.85s var(--ease);
+  will-change: transform;
+}
+
+[data-split].is-inview .char {
+  transform: translateY(0) rotate(0);
+}
+
+/* ---------- Magnetic elements ---------- */
+[data-magnetic] {
+  display: inline-block;
+  transition: transform 0.35s var(--ease);
+  will-change: transform;
+}
+
+/* ---------- Nav entrance ---------- */
+.nav {
+  opacity: 0;
+  transform: translateY(-24px);
+  animation: navIn 0.9s var(--ease) 0.3s forwards;
+}
+
+@keyframes navIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Tilt cards ---------- */
+.tilt {
+  transition: transform 0.35s var(--ease), border-color 0.4s, box-shadow 0.4s;
+}
+
+/* ---------- Section fade edges ---------- */
+.section--cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 224, 198, 0.08), transparent 70%);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  [data-split] .char {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
