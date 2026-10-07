@@ -651,3 +651,16 @@ img {
     font-size: clamp(2.2rem, 11vw, 3.4rem);
   }
 }
+
+/* ---------- Scroll progress bar ---------- */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 200;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 14px rgba(124, 92, 255, 0.8);
+  transition: width 0.1s linear;
+}
