@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NOVA — a creative studio crafting immersive digital experiences with motion." />
+  <title>NOVA — Creative Motion Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="loader" id="loader">
+    <div class="loader__ring"></div>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Particle canvas -->
+  <canvas id="particles" class="particles"></canvas>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo" data-magnetic>NOVA<span>&#9679;</span></a>
+    <nav class="nav__links">
+      <a href="#work" class="nav__link" data-magnetic>Work</a>
+      <a href="#services" class="nav__link" data-magnetic>Services</a>
+      <a href="#about" class="nav__link" data-magnetic>About</a>
+      <a href="#contact" class="nav__link nav__link--cta" data-magnetic>Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+
+      <p class="hero__eyebrow reveal">Creative Motion Studio &mdash; Est. 2026</p>
+
+      <h1 class="hero__title" data-split>
+        We craft digital experiences that move
+      </h1>
+
+      <p class="hero__sub reveal">
+        Design, motion and code fused into websites people remember.
+        Scroll to feel the difference.
+      </p>
+
+      <div class="hero__actions reveal">
+        <a href="#work" class="btn btn--primary" data-magnetic><span>See the work</span></a>
+        <a href="#contact" class="btn btn--ghost" data-magnetic><span>Start a project</span></a>
+      </div>
+
+      <div class="hero__scroll reveal">
+        <span class="hero__scroll-line"></span>
+        <em>scroll</em>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+      <div class="marquee__track">
+        <span>Motion Design &#9679; Interaction &#9679; Branding &#9679; WebGL &#9679; Front-End &#9679; Art Direction &#9679;</span>
+        <span>Motion Design &#9679; Interaction &#9679; Branding &#9679; WebGL &#9679; Front-End &#9679; Art Direction &#9679;</span>
+      </div>
+    </div>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="section__head">
+        <span class="section__index reveal">01</span>
+        <h2 class="section__title" data-split>Selected work</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card tilt reveal" data-tilt>
+          <div class="card__media card__media--a"></div>
+          <div class="card__body">
+            <h3>Aurora Commerce</h3>
+            <p>E-commerce experience with scroll-driven product storytelling.</p>
+            <span class="card__tag">Web / Motion</span>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-tilt>
+          <div class="card__media card__media--b"></div>
+          <div class="card__body">
+            <h3>Pulse Festival</h3>
+            <p>Audio-reactive visuals and an interactive lineup explorer.</p>
+            <span class="card__tag">Interaction</span>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-tilt>
+          <div class="card__media card__media--c"></div>
+          <div class="card__body">
+            <h3>Orbit Fintech</h3>
+            <p>Data-dense dashboard softened with tasteful micro-animations.</p>
+            <span class="card__tag">Product</span>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-tilt>
+          <div class="card__media card__media--d"></div>
+          <div class="card__body">
+            <h3>Monolith Studio</h3>
+            <p>Brutalist portfolio with magnetic navigation and page transitions.</p>
+            <span class="card__tag">Brand / Web</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section--alt" id="services">
+      <div class="section__head">
+        <span class="section__index reveal">02</span>
+        <h2 class="section__title" data-split>What we do</h2>
+      </div>
+
+      <ul class="services">
+        <li class="service reveal">
+          <span class="service__num">01</span>
+          <div>
+            <h3>Art Direction</h3>
+            <p>Visual systems, typography and colour that give brands a pulse.</p>
+          </div>
+        </li>
+        <li class="service reveal">
+          <span class="service__num">02</span>
+          <div>
+            <h3>Motion &amp; Interaction</h3>
+            <p>Micro-interactions, page transitions and scroll choreography.</p>
+          </div>
+        </li>
+        <li class="service reveal">
+          <span class="service__num">03</span>
+          <div>
+            <h3>Front-End Engineering</h3>
+            <p>Fast, accessible, buttery-smooth builds with zero bloat.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Stats / About -->
+    <section class="section" id="about">
+      <div class="section__head">
+        <span class="section__index reveal">03</span>
+        <h2 class="section__title" data-split>Studio in numbers</h2>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal"><strong data-count="120">0</strong><span>Projects shipped</span></div>
+        <div class="stat reveal"><strong data-count="38">0</strong><span>Awards &amp; mentions</span></div>
+        <div class="stat reveal"><strong data-count="14">0</strong><span>Humans in studio</span></div>
+        <div class="stat reveal"><strong data-count="99">0</strong><span>Avg. Lighthouse</span></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--cta" id="contact">
+      <span class="section__index reveal">04</span>
+      <h2 class="cta__title" data-split>Let's build something that moves</h2>
+      <a href="mailto:hello@nova.studio" class="btn btn--primary btn--lg" data-magnetic><span>hello@nova.studio</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2026 NOVA Studio</span>
+    <span>Built with vanilla HTML, CSS &amp; JS</span>
+    <a href="#home" data-magnetic>Back to top &uarr;</a>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
